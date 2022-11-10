@@ -1,8 +1,7 @@
-import blogUsers
-
 
 class RegisteredUserDb:
-    __reg_user_db: set[blogUsers.User]  # users collection
+
+    __reg_user_db: set  # users collection
 
     @property
     def registered_user_db(self):

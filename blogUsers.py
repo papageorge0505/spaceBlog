@@ -1,7 +1,5 @@
 import base64
 
-import userDb
-
 
 class User:
     __name: str
@@ -50,7 +48,6 @@ class User:
 
 
 class SuperAdmin(User):
-
     def get_all_user_data(self, user):
         print(f"All user data\n"
               f"Name: {user.__name}\n"
@@ -60,7 +57,7 @@ class SuperAdmin(User):
               f"Is admin: {user.__is_admin}\n"
               f"Is authorized: {user.__is_authorized}")
 
-    def change_admin_status(self, db: userDb.RegisteredUserDb, user_name: str, status: bool):
+    def change_admin_status(self, db, user_name: str, status: bool):
         x = False
         for i in db.registered_user_db:
             if i.name == user_name:
@@ -76,3 +73,8 @@ class SuperAdmin(User):
 
         if not x:
             print(f"No user with name {user_name}.")
+
+
+e = SuperAdmin("George", "0505", 20)
+
+e.status = "SuperAdmin"
